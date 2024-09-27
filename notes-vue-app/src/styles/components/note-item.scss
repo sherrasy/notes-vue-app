@@ -1,0 +1,33 @@
+.note {
+  &__container,
+  &__controls {
+    @include default-flex-centered;
+    gap: 10px;
+  }
+
+  &__text {
+    width: 100%;
+  }
+
+  &__button {
+    &.note-btn-edit {
+      @include default-button-params($color-amber, $color-amber-hover);
+    }
+    &.note-btn-delete {
+      @include default-button-params($color-amaranth, $color-amaranth-hover);
+    }
+    &.note-btn-done {
+      @include default-button-params($color-chateu-green, $color-chateu-green-hover);
+    }
+  }
+
+  &__container.task-done > &__text {
+    text-decoration: line-through;
+    color: $color-aluminium;
+  }
+
+  &__container.task-done > &__controls > &__button.note-btn-edit,
+  &__container.task-done > &__controls > &__button.note-btn-done {
+    opacity: 0;
+  }
+}

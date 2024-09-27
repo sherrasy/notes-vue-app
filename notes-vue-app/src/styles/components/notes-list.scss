@@ -1,0 +1,11 @@
+.notes-list {
+  &__wrapper {
+    padding: 10px 20px;
+    background-color: $color-alice-blue;
+    border-radius: 8px;
+  }
+  &__item {
+    margin: 14px 0;
+    width: 1024px;
+  }
+}
