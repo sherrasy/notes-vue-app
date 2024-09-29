@@ -1,0 +1,16 @@
+// Global
+//-----------------
+
+@import './vendor/normalize';
+@import './global/variables';
+@import './global/mixins';
+
+// Pages
+//-----------------
+@import './pages/main-page';
+
+// Blocks
+//-----------------
+@import './components/note-form';
+@import './components/notes-list';
+@import './components/note-item';
