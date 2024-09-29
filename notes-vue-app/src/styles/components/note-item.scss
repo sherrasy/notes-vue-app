@@ -26,8 +26,10 @@
     color: $color-aluminium;
   }
 
-  &__container.task-done > &__controls > &__button.note-btn-edit,
-  &__container.task-done > &__controls > &__button.note-btn-done {
+  &__container.task-done > &__controls > &__button.note-btn-edit {
     opacity: 0;
+  }
+  &__container.task-done > &__controls > &__button.note-btn-done {
+    padding: 10px 20px;
   }
 }

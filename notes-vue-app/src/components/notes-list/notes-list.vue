@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import NoteItem from '../note-item/note-item.vue';
+import { useNotesStore } from '@/stores/notes-data.js';
 
-const notes = ref([{ id: 1, text: 'note-1', isDone:false }, { id: 2, text: 'note-2', isDone:true }, { id: 3, text: 'note-3', isDone:false }])
+const notesStore = useNotesStore();
+const notes =  notesStore.notes;
+
 </script>
 
 <template>

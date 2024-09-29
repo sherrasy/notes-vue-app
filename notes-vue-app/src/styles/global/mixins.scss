@@ -20,6 +20,7 @@
 
 @mixin default-button-params($button-color, $button-hover-color) {
   padding: 10px 14px;
+  width: max-content;
   height: 50px;
   font-weight: 600;
   border: 1px solid $button-color;
