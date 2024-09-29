@@ -3,11 +3,9 @@ import MainPage from '@/pages/main-page.vue'
 </script>
 
 <template>
-  <main>   
-      <MainPage/>
+  <main>
+    <MainPage />
   </main>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
