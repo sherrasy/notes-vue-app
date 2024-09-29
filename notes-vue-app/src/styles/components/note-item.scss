@@ -26,7 +26,14 @@
     color: $color-aluminium;
   }
 
-  &__container.task-done > &__controls > &__button.note-btn-edit {
+  &__container.edit-active {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+
+  &__container.task-done > &__controls > &__button.note-btn-edit,
+  &__container.edit-active > &__controls > &__button.note-btn-done {
     opacity: 0;
   }
   &__container.task-done > &__controls > &__button.note-btn-done {
