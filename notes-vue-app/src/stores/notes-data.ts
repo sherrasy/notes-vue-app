@@ -1,6 +1,6 @@
-import { ref } from 'vue'
-import { defineStore } from 'pinia'
 import type { Note } from '@/types/note.type'
+import { defineStore } from 'pinia'
+import { ref } from 'vue'
 
 export const useNotesStore = defineStore(
   'notesData',
@@ -13,8 +13,8 @@ export const useNotesStore = defineStore(
 
     function updateNote(updatedNote: Note) {
       const noteId = notes.value.findIndex((note) => note.id === updatedNote.id)
-      if(noteId !==-1) {
-        notes.value[noteId] = { ...notes.value[noteId], ...updatedNote };
+      if (noteId !== -1) {
+        notes.value[noteId] = { ...notes.value[noteId], ...updatedNote }
       }
     }
 

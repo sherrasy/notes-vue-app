@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useNotesStore } from '@/stores/notes-data.js'
-import { checkValidity, getNoteId } from '@/utils/helpers.js'
+import { useNotesStore } from '@/stores/notes-data.js';
+import { checkValidity, getNoteId } from '@/utils/helpers.js';
+import { ref } from 'vue';
 
 const notesStore = useNotesStore()
 const isValid = ref<boolean>(true)
 const noteText = ref<string>('')
-const inputRef = ref<HTMLInputElement>();
+const inputRef = ref<HTMLInputElement>()
 
-const handleResetInvalid = ()=>{ 
-  if( !isValid.value){
+const handleResetInvalid = () => {
+  if (!isValid.value) {
     isValid.value = true
   }
-};
+}
 
 const handleFormSubmit = () => {
   const dataValid = checkValidity(noteText.value)
@@ -20,12 +20,11 @@ const handleFormSubmit = () => {
   if (dataValid) {
     const newNote = { id: getNoteId(), text: noteText.value, isDone: false }
     notesStore.addNote(newNote)
-    noteText.value='';
-  }else{
-    inputRef.value?.focus();
+    noteText.value = ''
+  } else {
+    inputRef.value?.focus()
   }
 }
-
 </script>
 
 <template>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import AddNoteForm from '@/components/note-form/add-note-form.vue'
-import NotesList from '@/components/notes-list/notes-list.vue'
+import AddNoteForm from '@/components/note-form/add-note-form.vue';
+import NotesList from '@/components/notes-list/notes-list.vue';
 </script>
 
 <template>

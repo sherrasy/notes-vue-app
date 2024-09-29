@@ -1,7 +1,7 @@
 .form {
   &__wrapper {
-    margin: 40px 0;
-    padding: 20px;
+    width: 100%;
+    max-width: 1024px;
     border-radius: 8px;
     background-color: $color-alice-blue;
 
@@ -12,21 +12,44 @@
       -webkit-box-align: baseline;
       -ms-flex-align: baseline;
       align-items: baseline;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
+      width: 100%;
       gap: 10px;
+    }
+
+    &.add-note-form {
+      margin: 40px 0;
+      padding: 20px;
+
+      & > form {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+      }
+    }
+
+    &.edit-note-form {
+      & > form {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+      }
     }
   }
 
-  &__input-container {
+  &__wrapper.add-note-form > form > &__input-container {
     @include default-flex-centered-column;
+  }
+
+  &__wrapper.edit-note-form > form > &__input-container {
+    @include default-flex-centered;
+    gap: 40px;
   }
 
   &__input {
     padding: 10px 14px;
     &.invalid {
       border: 1px solid $color-amaranth;
+      outline: 1px solid $color-amaranth;
     }
   }
 

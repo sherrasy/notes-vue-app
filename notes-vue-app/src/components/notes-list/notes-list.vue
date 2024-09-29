@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { storeToRefs } from 'pinia'
-import NoteItem from '../note-item/note-item.vue'
-import { useNotesStore } from '@/stores/notes-data.js'
+import { useNotesStore } from '@/stores/notes-data.js';
+import { storeToRefs } from 'pinia';
+import NoteItem from '../note-item/note-item.vue';
 
 const notesStore = useNotesStore()
 const { notes } = storeToRefs(notesStore)

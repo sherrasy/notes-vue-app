@@ -1,31 +1,31 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useNotesStore } from '@/stores/notes-data.js'
-import { checkValidity } from '@/utils/helpers.js'
+import { useNotesStore } from '@/stores/notes-data.js';
 import type { Note } from '@/types/note.type.js';
+import { checkValidity } from '@/utils/helpers.js';
+import { ref } from 'vue';
 
-const props = defineProps<{note:Note}>();
+const props = defineProps<{ note: Note }>()
 const emit = defineEmits(['change-view'])
 const notesStore = useNotesStore()
 const isValid = ref<boolean>(true)
 const noteText = ref<string>(props.note.text)
-const inputRef = ref<HTMLInputElement>();
+const inputRef = ref<HTMLInputElement>()
 
-const handleResetInvalid = ()=>{ 
-  if( !isValid.value){
+const handleResetInvalid = () => {
+  if (!isValid.value) {
     isValid.value = true
   }
-};
+}
 
 const handleFormSubmit = () => {
   const dataValid = checkValidity(noteText.value)
   isValid.value = dataValid
   if (dataValid) {
-    const updatedNote = { ...props.note, text: noteText.value}
+    const updatedNote = { ...props.note, text: noteText.value }
     notesStore.updateNote(updatedNote)
-    emit('change-view');
-  }else{
-    inputRef.value?.focus();
+    emit('change-view')
+  } else {
+    inputRef.value?.focus()
   }
 }
 </script>
@@ -41,7 +41,7 @@ const handleFormSubmit = () => {
           autocomplete="off"
           placeholder="Текст заметки"
           v-model="noteText"
-                    @blur="handleResetInvalid"
+          @blur="handleResetInvalid"
           ref="inputRef"
         />
         <span class="form__error"> Заполните поле</span>
